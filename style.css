@@ -1,0 +1,71 @@
+/* Make the background image fill the screen */
+body {
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('Heyring.png'); /* Replace with your image URL */
+    background-size: cover; /* Make sure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Avoid tiling the image */
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align content at the top */
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif; /* Use Roboto Condensed as the primary font */
+
+}
+
+/* Styling the new text element */
+.center-text {
+    margin-top: 33vh; /* Adjust the vertical position */
+    font-size: 3.5rem; /* Adjust font size */
+    color: black; /* Text color */
+
+}
+
+/* Styling the spinning image */
+.spinning-image {
+    position: absolute; /* Allows precise placement at the bottom */
+    bottom: 325px; /* Distance from the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to ensure centering */
+    pointer-events: none; /* Prevent the image's hover state from impacting other elements */
+}
+
+.spinning-image img {
+    width: 400px; /* Initial size of the image */
+    height: auto; /* Maintain aspect ratio */
+    animation: spin 3.5s linear infinite; /* Spinning animation */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+    cursor: pointer; /* Show pointer on hover */
+    pointer-events: auto;
+}
+
+/* Animation keyframes for spinning */
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* Rotate a full circle */
+    }
+}
+
+/* Stop spinning and enlarge on hover */
+.spinning-image img:hover {
+    animation-play-state: paused; /* Pause the spinning animation */
+}
+.bottom-image {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%; /* Make it span the entire screen width */
+    height: auto; /* Adjust height as needed */
+    overflow: hidden; /* Ensure no extra content appears */
+}
+
+.bottom-image img {
+    width: 100%; /* Full width */
+    height: 100%; /* Stretch to fill the height */
+    object-fit: cover; /* Maintain image proportions */
+}
+
+  

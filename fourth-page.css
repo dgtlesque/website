@@ -1,0 +1,89 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden; /* Prevent scrolling */
+    text-align: center;
+}
+
+/* Background image styling */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-image: url('pho'); /* Replac
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image tiling */
+    z-index: -1; /* Place image behind the content */
+}
+
+/* Styling for the text container */
+.text-container {
+    margin-top: 5vh; /* Move text slightly higher */
+    color: black; /* Text color */
+    font-size: 3.5rem; /* Adjust text size */
+    text-align: center; /* Center the text horizontally */
+    font-weight: bold; /* Make text bold */
+    line-height: 0.5; /* Spacing between rows */
+    z-index: 10; /* Ensure text is above background */
+}
+
+/* Spinning image styling */
+.spinning-image {
+    position: absolute;
+    bottom: 0%; /* Adjust position from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+    z-index: 2; /* Ensure it's above the background */
+}
+
+.spinning-image img {
+    width: 700px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    animation: spin 30s linear infinite; /* Add spinning effect */
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Overlay image styling */
+.overlay-image {
+    position: absolute;
+    bottom: -6%; /* Same position as spinning image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+    z-index: 3; /* Ensure it's above the spinning image */
+}
+
+.overlay-image img {
+    width: 850px; /* Match the size of the spinning image */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.8s ease-in-out; /* Smooth scaling effect */
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* Enlarge overlay image on hover */
+.overlay-image img:hover {
+    transform: scale(10); /* Enlarge the image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills the screen */
+    z-index: 4; /* Ensure it covers everything */
+}
